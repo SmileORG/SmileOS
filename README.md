@@ -1,3 +1,3 @@
-#SmileOS#    
-##README file##    
+#SmileOS
+##README file
 <center>![Logo](logo.png)</center>
