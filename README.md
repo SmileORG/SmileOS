@@ -4,4 +4,4 @@
     
     
 
-#<center>[Wiki](https://github.com/SmileORG/SmileOS/wiki)</center>
+<center>[Wiki](https://github.com/SmileORG/SmileOS/wiki)</center>
