@@ -1,0 +1,4 @@
+lang.boot = "Booting..."
+lang.login.title = "Login window"
+lang.login.user = "Username"
+lang.login.pass = "Password"
