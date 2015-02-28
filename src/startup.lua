@@ -1,3 +1,7 @@
+lang = {}
+lang.login = {}
+config = {}
+config.ssh = {}
 pcall(dofile,"os.config")
 pcall(dofile,"lang/"..config.lang..".lang")
 term.setBackgroundColor(colors.white)
