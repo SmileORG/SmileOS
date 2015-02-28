@@ -4,6 +4,7 @@ _G.config = {}
 _G.config.ssh = {}
 pcall(dofile,"os.config")
 pcall(dofile,"lang/"..config.lang..".lang")
+os.loadAPI("apis/sha256")
 term.setBackgroundColor(colors.white)
 term.setTextColor(colors.black)
 function os.version()
@@ -13,9 +14,11 @@ local parent = term.current()
 function term.restore()
   term.redirect(parent)
 end
+term.clear()
 term.setCursorPos(5,5)
 term.write(lang.boot)
 sleep(3)
+while true do
 term.setBackgroundColor(colors.white)
 term.clear()
 local w = window.create(term.current(),5,5,15,10)
@@ -44,3 +47,7 @@ term.setCursorPos(2,9)
 local pass = read("*")
 term.restore()
 term.setCursorPos(1,1)
+if sha256.hash(pass) == config.pass and user == config.user then
+  return
+end
+end
