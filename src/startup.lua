@@ -1,7 +1,7 @@
-lang = {}
-lang.login = {}
-config = {}
-config.ssh = {}
+_G.lang = {}
+_G.lang.login = {}
+_G.config = {}
+_G.config.ssh = {}
 pcall(dofile,"os.config")
 pcall(dofile,"lang/"..config.lang..".lang")
 term.setBackgroundColor(colors.white)
@@ -9,15 +9,16 @@ term.setTextColor(colors.black)
 function os.version()
   return "SmileOS 0.1A"
 end
+local parent = term.current()
 function term.restore()
-  term.redirect(term.native())
+  term.redirect(parent)
 end
 term.setCursorPos(5,5)
 term.write(lang.boot)
 sleep(3)
 term.setBackgroundColor(colors.white)
 term.clear()
-local w = window.create(term.native(),5,5,11,10)
+local w = window.create(term.current(),5,5,11,10)
 term.redirect(w)
 term.setBackgroundColor(colors.lightGray)
 term.clear()
@@ -41,3 +42,5 @@ term.setCursorPos(2,5)
 local user = read()
 term.setCursorPos(2,9)
 local pass = read("*")
+term.restore()
+term.setCursorPos(1,1)
