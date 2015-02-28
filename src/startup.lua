@@ -1,3 +1,3 @@
 pcall(dofile("os.config"))
-setfenv(pcall(dofile("lang/"..config.lang..".lang")),getfenv())
+pcall(dofile("lang/"..config.lang..".lang")
 term.setBackgroundColor(colors.white)
